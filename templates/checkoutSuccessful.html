@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="content-container">
+        <h1> Checkout Successful </h1>
+        <h2> Thank You! Your order is on the way! </h2>
+        <div class="product-container">
+            <img src="{{ url_for('static', filename = 'checkoutsuccessful.png') }}" alt="checkoutsuccessful style=" max width="65%" max height="65%">
+        </div>
+        <div class="content-container">
+            <h3> Your order will be delivered to you within 3-5 working days </h3>
+        </div>
+    </div>
+    <br>
+    <footer>
+        <div class="footer">
+            <p> © 2024 - Wyelle Sports Goods </p>
+        </div>
+    </footer>
+{% endblock %}

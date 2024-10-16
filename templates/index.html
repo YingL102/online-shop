@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+    
+{% block content %}
+    <img src="{{ url_for('static', filename = 'rackets.png') }}" alt="homepage" style="max-width: 100%; max-height: 100%;">
+    <div class="sort">
+        <form action="{{ url_for('galleryPage') }}" method="GET">
+            <label for="sort"> Sort by: </label>
+            <select name="sort" id="sort">
+                <option value="name"> Name </option>
+                <option value="price"> Price </option>
+                <option value="environmental_impact_rating"> Environmental Impact Rating </option>
+            </select>
+            <button type="submit"> Sort </button>
+        </form>
+    </div>
+    <div class="product-container">
+        {% for product in products %}
+            <div class="product">
+                <a href="{{ url_for ('singleProductPage', productId = product.id)}}">
+                    <p> {{ product.name }} - £{{ product.price }} </p>
+                    <img src="{{ url_for('static', filename = product.image) }}" alt="{{ product.name }}">
+                </a>
+                <form method="POST">
+                    {{ forms[product.id].hidden_tag() }}
+                    {{ forms[product.id].quantity.label }} {{ forms[product.id].quantity() }}
+                    {{ forms[product.id].submit() }}
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    <footer>
+        <div class="footer">
+            <p> © 2024 - Wyelle Sports Goods </p>
+        </div>
+    </footer>
+{% endblock %}

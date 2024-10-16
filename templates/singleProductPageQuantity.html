@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="product-container">
+        <h1> {{ product.name }} </h1>
+    </div>
+    <div class="product-container">
+        <h3> Price: £{{ product.price }} </h3>
+    </div>
+    <div class="product-container">
+        <img src="{{ url_for('static', filename = product.image) }}" alt="{{ product.name }}" >
+    </div>
+    <div class="product-container">
+        <p><b> {{ product.description }} </b></p>
+    </div>
+    <div class="product-container">
+        <p> Environmental Impact: {{ product.environmental_impact_rating }} </p>
+    </div>
+    <div class="product-container">
+        <p> Quantity: You have added {{ quantity }} item(s) to your basket! </p>
+    </div>
+    <div class="product-container">
+        <div class="col-md-3" >
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <p> © 2024 - Wyelle Sports Goods </p>
+        </div>
+    </footer>
+{% endblock %}
