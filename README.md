@@ -65,7 +65,3 @@ A simple Flask-based web application for a sports goods online shop. Users can v
 - **Product Detail:** Click on a product to view more details and add a quantity to your basket.
 - **Basket:** View items added to your basket and remove items if needed.
 - **Checkout:** Fill out the payment form to complete your order.
-
-## License
-
-This project is for educational purposes.
